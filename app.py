@@ -422,7 +422,7 @@ if st.button("登录", use_container_width=True, type="primary", key="login_subm
                     st.rerun()
                 else:
                     st.error("账号或密码错误")
-        return
+    return
 
     # 侧边栏菜单
     st.sidebar.info(f"当前登录：{st.session_state.username}")

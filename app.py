@@ -407,22 +407,19 @@ def main():
         st.session_state.username = ""
 
     # 登录页
-    if not st.session_state.is_login:
-        st.subheader("教师账号登录")
-        col1, col2, col3 = st.columns([1, 2, 1])
-        with col2:
-            user = st.text_input("账号", key="login_account_input")
-            password = st.text_input("密码", type="password", key="login_password_input")
-            # 修改第416行，加上 key 参数
-if st.button("登录", use_container_width=True, type="primary", key="login_submit_btn"):
-                if user in USER_ACCOUNTS and USER_ACCOUNTS[user] == pwd:
-                    st.session_state.is_login = True
-                    st.session_state.username = user
-                    st.success("登录成功")
-                    st.rerun()
-                else:
-                    st.error("账号或密码错误")
-    return
+    if not st.session_state.get("is_login", False):
+    st.subheader("教师账号登录")
+    user = st.text_input("账号", key="login_user")
+    pwd = st.text_input("密码", type="password", key="login_pwd")
+    if st.button("登录", use_container_width=True, type="primary", key="login_submit_btn"):
+        if user in USER_ACCOUNTS and USER_ACCOUNTS[user] == pwd:
+            st.session_state.is_login = True
+            st.session_state.username = user
+            st.success("登录成功")
+            st.rerun()
+        else:
+            st.error("账号或密码错误")
+
     # 侧边栏菜单
     st.sidebar.info(f"当前登录：{st.session_state.username}")
     menu = st.sidebar.radio("功能菜单", [

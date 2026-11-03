@@ -1,22 +1,4 @@
 {
-  "admin": {
-    "password": "admin@qzyc2026",
-    "role": "admin"
-  },
-  "teacher1": {
-    "password": "qzyc123456",
-    "role": "teacher"
-  },
-  "teacher2": {
-    "password": "qzyc123456",
-    "role": "teacher"
-  },
-  "teacher3": {
-    "password": "qzyc123456",
-    "role": "teacher"
-  },
-  "teacher4": {
-    "password": "qzyc123456",
-    "role": "teacher"
-  }
+    "teacher1": "123456",
+    "admin": "admin123"
 }

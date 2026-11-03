@@ -423,7 +423,6 @@ if st.button("登录", use_container_width=True, type="primary", key="login_subm
                 else:
                     st.error("账号或密码错误")
     return
-
     # 侧边栏菜单
     st.sidebar.info(f"当前登录：{st.session_state.username}")
     menu = st.sidebar.radio("功能菜单", [

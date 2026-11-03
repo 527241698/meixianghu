@@ -411,8 +411,8 @@ def main():
         st.subheader("教师账号登录")
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            user = st.text_input("账号")
-            pwd = st.text_input("密码", type="password")
+            user = st.text_input("账号", key="login_account_input")
+            password = st.text_input("密码", type="password", key="login_password_input")
             if st.button("登录", use_container_width=True, type="primary"):
                 if user in USER_ACCOUNTS and USER_ACCOUNTS[user] == pwd:
                     st.session_state.is_login = True

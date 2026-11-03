@@ -408,17 +408,18 @@ def main():
 
     # 登录页
     if not st.session_state.get("is_login", False):
-    st.subheader("教师账号登录")
-    user = st.text_input("账号", key="login_user")
-    pwd = st.text_input("密码", type="password", key="login_pwd")
-    if st.button("登录", use_container_width=True, type="primary", key="login_submit_btn"):
-        if user in USER_ACCOUNTS and USER_ACCOUNTS[user] == pwd:
-            st.session_state.is_login = True
-            st.session_state.username = user
-            st.success("登录成功")
-            st.rerun()
-        else:
-            st.error("账号或密码错误")
+        st.subheader("教师账号登录")
+        user = st.text_input("账号", key="login_user")
+        pwd = st.text_input("密码", type="password", key="login_pwd")
+        if st.button("登录", use_container_width=True, type="primary", key="login_submit_btn"):
+            if user in USER_ACCOUNTS and USER_ACCOUNTS[user] == pwd:
+                st.session_state.is_login = True
+                st.session_state.username = user
+                st.success("登录成功")
+                st.rerun()
+            else:
+                st.error("账号或密码错误")
+        return
 
     # 侧边栏菜单
     st.sidebar.info(f"当前登录：{st.session_state.username}")
